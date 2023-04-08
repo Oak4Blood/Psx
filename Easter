@@ -1,0 +1,76 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Crimson Hub", "Serpent")
+local Tab = Window:NewTab(" ")
+local Section = Tab:NewSection(" ")
+
+Section:NewButton("Doodel", " ", function()
+local f = workspace.__MAP.Scavenger.ScavengerEgg9.Egg
+local me = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+me.CFrame = f.CFrame
+
+
+end)
+
+Section:NewButton("Pixel", " ", function()
+local f = workspace.__MAP.Scavenger.ScavengerEgg18.Egg
+local me = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+me.CFrame = f.CFrame
+
+
+end)
+
+Section:NewButton("Tech", " ", function()
+local f = workspace.__MAP.Scavenger.ScavengerEgg.Egg
+local me = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+me.CFrame = f.CFrame
+
+
+end)
+
+Section:NewButton("Easter", " ", function()
+local f = workspace.__MAP.EasterEggs
+local me = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+for _,v in pairs(f:GetDescendants()) do
+if v.Name == "Egg" then
+if v.Transparency == 0 then
+    
+    me.CFrame = v.CFrame
+
+end
+end
+end
+end)
+
+Section:NewToggle("Easter loop", "Set Core", function(state)
+
+
+    if state then
+        ES = state
+while ES == true do
+
+wait()
+local f = workspace.__MAP.EasterEggs
+local me = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+for _,v in pairs(f:GetDescendants()) do
+if v.Name == "Egg" then
+if v.Transparency == 0 then
+    me.CFrame = v.CFrame
+    game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.E,false,game)
+    game:GetService("VirtualInputManager"):SendKeyEvent(false,Enum.KeyCode.E,false,game)
+end
+end
+end
+end
+    else
+
+       ES = state
+
+ print('Repeat Stopped')
+
+end
+end)
